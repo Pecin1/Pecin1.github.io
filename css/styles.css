@@ -1,0 +1,478 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;  
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: linear-gradient(to bottom, rgb(95, 94, 94), rgb(55, 55, 55));
+    color: white;
+    height: 100vh;
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 36px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.line {
+    height: 2px;
+    background: rgb(255, 255, 255);
+    transition: all ease 0.3s;
+}
+
+.line1, .line3 {
+    width: 100%;
+}
+
+.line2 {
+    width: 50%;
+}
+
+.hamburger-menu:hover .line1{
+    width: 65%;
+}
+.hamburger-menu:hover .line3 {
+    width: 50%;
+}
+
+.hamburger-menu:hover .line2 {
+    width: 90%;
+}
+
+.hamburger-menu.open .line1 {
+    transform: rotate(45deg) translate(9px, 7px);
+    width: 100%;
+    background: rgb(0, 0, 0);
+}
+
+
+.hamburger-menu.open .line2 {
+    opacity: 0;
+}
+
+.hamburger-menu.open .line3 {
+    transform: rotate(-45deg) translate(9px, -8px);
+    width: 100%;
+    background: rgb(0, 0, 0);
+}
+
+
+.hamburger-menu.open:hover .line1,
+.hamburger-menu.open:hover .line3{
+    background: rgb(114, 116, 115);
+}
+
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background: white;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    border-left: 3px solid black;
+    z-index: 10;
+}
+.containerMenuVeci{
+    width: 60%;
+    padding-left: 20%;
+    padding-top: 50%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Josefin Sans", sans-serif;
+}
+.menuVeciItem{
+    margin-bottom: 25%;
+    font-size: 3rem;
+    transition: all ease 0.3s;
+    color: black;
+}
+.menuVeciItem a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.menuVeciItem:hover{
+    scale: 1.1;
+    color: rgb(96, 96, 96);
+}
+
+.ikonyContainer{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30%;
+    border-top: 1px solid black;
+}
+.ikona{
+    padding-top:5%;
+    padding-right: 5%;
+}
+
+
+.menu.open {
+    transform: translateX(0);
+}
+
+
+.uvod{
+    font-size: 7rem;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: "Afacad Flux", sans-serif;
+}
+.uvodSlova {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+body.loaded .uvodSlova {
+    opacity: 1;
+    transform: translateY(0);
+}
+.uvodSlovaPod{
+    font-size: 3rem;
+    color: rgb(210, 210, 210);
+    position: relative;
+
+}
+
+.menu.open + .uvod .uvodSlova {
+    transform: translateX(-25%);
+    
+}
+
+.containerAboutMe {
+    height: 100vh;
+    background: linear-gradient(rgb(55, 55, 55), black);
+    padding-top: 10%;
+    
+}
+
+
+
+
+.aboutme {
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 20px;
+    height: 50%;
+    background: rgb(212, 212, 212);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px black;
+    box-shadow: 0px 4px 50px rgba(255, 255, 255, 0.697);
+    padding: 20px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.textaboutme {
+    width: 50%;
+    padding: 10px;
+}
+
+.textaboutme h2 {
+    
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: rgb(3, 3, 3);
+}
+
+.textaboutme p {
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgb(0, 0, 0);
+}
+
+
+
+.fotkaaboutme {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    height: 150%;
+    z-index: 5;
+}
+
+
+
+.fotkaaboutme img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    transition: 0.3s ease;
+    max-width: 100%;
+    border-radius: 10px;
+    border: solid 2px black;
+    z-index: 5;
+    box-shadow: 0px 1px 5px white;
+}
+
+.fotkaaboutme img:hover {
+    filter: grayscale(0%);
+    box-shadow: 0px 1px 20px white;
+}
+
+.skills{
+    display: flex;
+    justify-content: center;
+}
+.skill{
+    border-radius: 10px;
+    background:rgba(132, 9, 169, 0.638);
+    padding: 7px;
+    margin: 3px;
+    transition: transform 0.3s ease;   
+}
+.skill:hover{
+    transform: scale(1.05);
+}
+
+.sipka {
+    bottom: 5%;
+    right: 3.5%;
+    cursor: pointer;
+    transition: 0.3s ease;
+    transform: scale(1.3);
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.sipka.zobrazeno {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition-delay: 0.3s;
+}
+
+.sipka:hover {
+    scale: 1.3;
+}
+
+.containerProjects {
+    height: 100vh;
+    background-color: black;
+    padding-top: 5%;
+}
+
+.projects {
+    margin-left: 10%;
+    width: 80%;
+    height: 80%;
+    background: rgb(218, 214, 214);
+    border-radius: 10px;
+}
+
+.projectsNav {
+    height: 10%;
+    background: rgba(123, 119, 119, 0.69);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.7rem;
+    color: rgb(244, 244, 244); 
+    font-weight: bold;
+}
+
+.projectsNazvyProjektu {
+    position: relative;
+    display: flex;
+    gap: 15%; 
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.nazvyProjektuStyly {
+    cursor: pointer; 
+    position: relative; 
+    transition:all 0.2s ease;
+}
+
+
+.nazvyProjektuStyly.active {
+    font-weight: bold;
+    color: rgb(83, 83, 83);
+    font-size: 1.7rem;
+}
+
+.fotkaProjekt {
+    position: relative;
+    padding-top: 8%;
+    padding-left: 8%;
+    color: black;
+    font-size: 20px;
+    margin-right: 2%;
+}
+
+.fotkaProjekt img {
+    position: relative;
+    width: 50%;
+    height: auto;
+    box-shadow: 2px 4px 20px black;
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease, scale 0.2s ease;
+}
+
+.popisFotkaProjekt {
+    position: absolute;
+    padding-left: 50%;
+    top: 25%;
+    color: black;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.3rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.contactmeContainer {
+    border-top: 1px solid white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(black, rgb(136, 134, 134));
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.contactForm {
+    background-color: rgba(182, 173, 173, 0.737);
+    border-radius: 2px solid black;
+    padding: 2%;
+    border-radius: 2px;
+    width: 40%;
+}
+
+.contactForm h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.formular {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.formular label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #1e1e1e;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.formular input, .formular textarea {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgb(9, 9, 9);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formular input:focus, .formular textarea:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+.submitButton {
+    width: 20%;
+    padding: 2%;
+    font-size: 0.8rem;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.submitButton:hover {
+    transform: scale(1.05);
+    
+}
+
+.examplesContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(136, 134, 134), white);
+    border-top: black solid 2px;
+}
+
+.tabulkaPriklady {
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 60%;
+    max-width: 500px;
+    height: auto;
+    padding: 20px;
+    background: rgb(203, 203, 203);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.nadpis {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.veciPriklady {
+    font-size: 1.5rem;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 10px 0;
+}
+
+.veciPriklady a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.veciPriklady a:hover {
+    color: #5a5959;
+}

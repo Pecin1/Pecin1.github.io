@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kalkulacka</title>
+    <link rel="stylesheet" href="css/css.css">
+
+</head>
+<body>
+    <div class="kalkulackaFormular">
+        <form id="kalkulacka">
+            <label for="number1">Zadej cislo 1</label>
+            <input required type="text" id="cislo1" name="number1">
+            <label for="number2">Zadej cislo 2</label>
+            <input required type="text" id="cislo2" name="number2">
+            <select id="operand" form="calculator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <button type="button" onclick="calc()">Vypočítej</button>
+            <label>VYSLEDEK TADY:</label>
+            <span id="result"></span>
+        </form>
+    </div>
+    <script src="js/javascript.js"></script>
+</body>
+</html>
